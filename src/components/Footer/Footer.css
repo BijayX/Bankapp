@@ -1,0 +1,29 @@
+/* Footer.css */
+/* .city-background {
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+  } */
+
+/* .footer-bg-image {
+  background-image: url('../../assets/Rectangle.png');
+  background-size: cover;
+  background-position: center;
+} */
+.footer-bg-image {
+  background-image: url('../../assets/Rectangle.png');
+  background-size: cover;
+  background-position: center;
+}
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
