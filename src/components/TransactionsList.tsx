@@ -12,18 +12,20 @@ const TransactionsList: React.FC = () => {
     <div className="bg-white rounded-lg p-6 mb-6">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Transactions</h2>
-        <button className="text-green-500 hover:text-green-600">→</button>
+        <button className="text-green-500 hover:text-green-600 text-2xl ">→</button>
       </div>
       <div className="space-y-4">
         {transactions.map((transaction, index) => (
           <div key={index} className="flex justify-between items-center">
             <div>
-              <p className="font-semibold">{transaction.name}</p>
+              <p className="text-sm  font-semibold">{transaction.name}</p>
               <p className="text-sm text-gray-500">{transaction.date}</p>
             </div>
-            <p className={transaction.amount.startsWith('+') ? 'text-green-500' : 'text-red-500'}>
+            <p className={`text-xl  bebas-neue-regular ${transaction.amount.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}>
               {transaction.amount}
             </p>
+
+
           </div>
         ))}
       </div>

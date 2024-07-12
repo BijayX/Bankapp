@@ -9,7 +9,7 @@ import Sidebar from '../../components/Siderbar/Siderbar';
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="flex h-screen ">
+    <div className="flex h-screen px-10 ">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Navbar />

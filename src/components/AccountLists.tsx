@@ -9,14 +9,14 @@ const AccountsLists: React.FC = () => {
 
   return (
     <div className="mb-6">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center  mb-4">
         <h2 className="text-xl font-semibold">Accounts</h2>
-        <button className="text-green-500 hover:text-green-600">+</button>
+        <button className="  text-3xl rounded-lg bg-[#D4F3E7] px-3 py-1  hover:text-black">+</button>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-5">
         {accounts.map((account, index) => (
-          <div key={index} className="bg-green-100 rounded-lg p-4">
-            <h3 className="font-semibold mb-2">{account.name}</h3>
+          <div key={index} className="bg-[#D4F3E7] text-center rounded-lg p-8 px-10">
+            <h3 className="font-semibold text-left  text-blueis mb-2">{account.name}</h3>
             <p className="text-2xl font-bold">{account.balance}</p>
           </div>
         ))}
