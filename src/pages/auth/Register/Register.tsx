@@ -68,7 +68,7 @@ const Register: React.FC = () => {
           />
           <div className="mb-4">
             <label className="inline-flex items-center">
-              <input type="checkbox" className="form-checkbox w-4 h-4 text-[#8A8A8A]" />
+              <input type="checkbox" className="form-checkbox w-4 h-4 text-[#8A8A8A] accent-rose-500" />
               <span className="ml-2 text-[#B8B8B8]">I agree to all the <a href="#" className="text-bg-gcolor">Terms, Privacy Policy</a> and <a href="#" className="text-bg-gcolor">Fees</a>.</span>
             </label>
           </div>
