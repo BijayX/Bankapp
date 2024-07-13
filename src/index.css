@@ -9,7 +9,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'react-datepicker/dist/react-datepicker.css';
 
 
 .bebas-neue-regular {

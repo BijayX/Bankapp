@@ -15,6 +15,8 @@ export default {
         'bg-gcolor':'#33B786',
         'blueis':'#46237A',
         'txtcol':'#555555',
+        'bgcol':'#8A8A8A',
+        'bgcolor':'#f5fcf9'
         
       },
       borderRadius: {

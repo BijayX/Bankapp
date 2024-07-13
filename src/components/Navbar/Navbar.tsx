@@ -1,9 +1,10 @@
 import React from 'react';
 import { BiSearch, BiBell } from 'react-icons/bi';
+import profile from '../../assets/Ellipse.png'
 
 const Navbar: React.FC = () => {
     return (
-        <header className="bg-white">
+        <header className="bg-bgcolor">
             <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-5">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
@@ -23,13 +24,13 @@ const Navbar: React.FC = () => {
                             <BiSearch className="absolute left-3 top-3 text-gray-400" />
                         </div>
                         <button
-                            className="ml-4 p-2 rounded-full hover:bg-gray-100"
+                            className="ml-4 p-2 rounded-full text-black text-lg "
                             aria-label="Notifications"
                         >
                             <BiBell className="text-gray-600" />
                         </button>
                         <img
-                            src="/path-to-avatar.jpg"
+                            src={profile}
                             alt="User Avatar"
                             className="ml-4 h-8 w-8 rounded-full"
                         />

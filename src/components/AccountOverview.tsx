@@ -14,20 +14,20 @@ const AccountOverview: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg mb-6">
+    <div className="bg-bgcolor rounded-lg mb-6">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Current Account Balance</h2>
         <div className="flex items-center space-x-4">
           <div className="border rounded-md bg-[#F0F0F0] p-2 flex justify-center items-center">
             <button onClick={() => setBalanceVisible(!balanceVisible)}>
               {balanceVisible ? (
-                <AiOutlineEye className="text-gray-600 cursor-pointer" size={18} />
+                <AiOutlineEye className="text-gray-600 cursor-pointer" size={16} />
               ) : (
-                <AiOutlineEyeInvisible className="text-gray-600 cursor-pointer" size={18} />
+                <AiOutlineEyeInvisible className="text-gray-600 cursor-pointer" size={16} />
               )}
             </button>
           </div>
-          <div className="flex items-center border border-[#F0F0F0] rounded-lg bg-[#F0F0F0]">
+          <div className="flex items-center border  border-[#F0F0F0] rounded-lg bg-[#F0F0F0]">
             <FaCalendarAlt className="text-gray-600 mr-2 ml-2" size={18} />
             <DatePicker
               selected={startDate}

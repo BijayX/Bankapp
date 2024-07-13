@@ -21,7 +21,7 @@ const TransactionsList: React.FC = () => {
               <p className="text-sm  font-semibold">{transaction.name}</p>
               <p className="text-sm text-gray-500">{transaction.date}</p>
             </div>
-            <p className={`text-xl  bebas-neue-regular ${transaction.amount.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}>
+            <p className={`text-xl  ${transaction.amount.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}>
               {transaction.amount}
             </p>
 
