@@ -7,11 +7,13 @@ import Dashboard from "./pages/Dasboard/Dashboard";
 import Profile from "./pages/Profile/Profile";
 import Sidebar from "./components/Siderbar/Siderbar";
 import Navbar from "./components/Navbar/Navbar";
+import Account from "./pages/Accounts/Account";
+import TranscationsPage from "./pages/Transcations/TranscationsPage";
 
 const App = () => {
   const location = useLocation();
 
-  const isDashboardOrProfile = location.pathname === '/page-Dashboard' || location.pathname === '/profile';
+  const isDashboardOrProfile = location.pathname === '/page-Dashboard' || location.pathname === '/profile' || location.pathname === '/accounts' || location.pathname ==='/transcations';
 
   return (
     <div className="flex h-screen px-10 bg-bgcolor ">
@@ -26,6 +28,8 @@ const App = () => {
             <Route path="/auth/verify" element={<EmailVerification />} />
             <Route path="/page-Dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/accounts" element={<Account />} />
+            <Route path="/transcations" element={<TranscationsPage />} />
           </Routes>
         </main>
       </div>

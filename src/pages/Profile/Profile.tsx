@@ -73,7 +73,7 @@ const UserProfile: React.FC = () => {
         <div className="col-span-1">
           <div className="bg-[#D4F3E7] rounded-lg p-6 ml-6">
             <div className="flex justify-between items-center">
-              <h3 className="text-xl font-semibold">Main Account</h3>
+              <h3 className="text-blueis font-medium">Main Account</h3>
               <button onClick={() => setShowBalance(!showBalance)} className="text-gray-500">
                 {showBalance ? <FaEyeSlash /> : <FaEye />}
               </button>

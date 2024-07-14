@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      spacing: {
+        '4.5': '65px',
+      },
       fontFamily: {
         'bebas': ['Bebas Neue', 'sans-serif'],  
       },

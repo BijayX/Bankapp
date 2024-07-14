@@ -15,10 +15,10 @@ const Sidebar: React.FC = () => {
           <a onClick={()=>navigate("/page-Dashboard")} className="block py-2.5 px-4   text-txtcol font-bold transition duration-200 hover:text-bg-gcolor">
             <BiGridAlt className="inline-block mr-2 text-2xl" /> Overview
           </a>
-          <a href="#" className="block py-2.5 px-4 rounded text-txtcol transition font-bold duration-200  hover:text-bg-gcolor">
+          <a onClick={()=>navigate("/accounts")} className="block py-2.5 px-4 rounded text-txtcol transition font-bold duration-200  hover:text-bg-gcolor">
             <BiCreditCard className="inline-block mr-2 text-2xl" /> Accounts
           </a>
-          <a href="#" className="block py-2.5 px-4 rounded text-txtcol transition font-bold duration-200  hover:text-bg-gcolor">
+          <a onClick={()=>navigate("/transcations")} className="block py-2.5 px-4 rounded text-txtcol transition font-bold duration-200  hover:text-bg-gcolor">
             <BiTransfer className="inline-block mr-2 text-2xl" /> Transactions
           </a>
           <a onClick={()=>navigate("/profile")} className="block py-2.5 px-4 rounded text-txtcol transition duration-200 font-bold hover:text-bg-gcolor">
