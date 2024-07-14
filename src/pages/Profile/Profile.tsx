@@ -2,9 +2,11 @@ import React from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import profile from '../../assets/Ellipse.png';
 import TransactionsList from '../../components/TransactionsList';
+import ResetPassword from '../auth/ResetPassword';
 
 const UserProfile: React.FC = () => {
   const [showBalance, setShowBalance] = React.useState(true);
+  const [isResetPasswordModalOpen, setIsResetPasswordModalOpen] = React.useState(false);
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   const handleImageClick = () => {
@@ -20,6 +22,10 @@ const UserProfile: React.FC = () => {
       // Handle file upload logic here
       console.log(file);
     }
+  };
+
+  const toggleResetPasswordModal = () => {
+    setIsResetPasswordModalOpen(!isResetPasswordModalOpen);
   };
 
   return (
@@ -63,7 +69,10 @@ const UserProfile: React.FC = () => {
                 <p className="font-bold text-xl">Female</p>
               </div>
 
-              <button className="w-full mt-8 bg-bg-gcolor text-white py-3 rounded-md hover:bg-[#288F69] transition duration-300">
+              <button 
+                className="w-full mt-8 bg-bg-gcolor text-white py-3 rounded-md hover:bg-[#288F69] transition duration-300"
+                onClick={toggleResetPasswordModal}
+              >
                 Reset Password
               </button>
             </div>
@@ -88,6 +97,8 @@ const UserProfile: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {isResetPasswordModalOpen && <ResetPassword />}
     </>
   );
 };

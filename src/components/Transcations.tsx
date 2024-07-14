@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 interface Transaction {
   id: number;
@@ -10,7 +11,12 @@ interface Transaction {
   status: 'Pending' | 'Completed' | 'Canceled';
 }
 
-const Transactions: React.FC = () => {
+interface TransactionsProps {
+  showHeader?: boolean;
+}
+
+const Transactions: React.FC<TransactionsProps> = ({ showHeader = true }) => {
+  const navigate = useNavigate()
   const transactions: Transaction[] = [
     { id: 1, name: "Oluwaben Jamin", type: "Bank Transfer", date: "06.Mar.2023 - 09:39", amount: -10000.00, status: "Pending" },
     { id: 2, name: "Oluwaben Jamin", type: "Direct Pay", date: "06.Mar.2023 - 09:39", amount: 10000.00, status: "Completed" },
@@ -30,15 +36,17 @@ const Transactions: React.FC = () => {
 
   return (
     <div className="mr-2">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Transactions</h2>
-        <a href="#" className="text-green-500 flex items-center">
-          View All
-          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
+      {showHeader && (
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-bold">Transactions</h2>
+          <a onClick={()=>navigate("/page-transcations")} className="text-green-500 flex items-center">
+            View All
+            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      )}
       <div className="space-y-4">
         {transactions.map((transaction) => (
           <div key={transaction.id} className="flex items-center justify-between border-b pb-2 mb-2">

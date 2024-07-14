@@ -19,7 +19,8 @@ export default {
         'blueis':'#46237A',
         'txtcol':'#555555',
         'bgcol':'#8A8A8A',
-        'bgcolor':'#f5fcf9'
+        'bgcolor':'#f5fcf9',
+        'sidecol':'#32c48c'
         
       },
       borderRadius: {
