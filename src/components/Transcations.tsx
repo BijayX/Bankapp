@@ -35,7 +35,7 @@ const Transactions: React.FC<TransactionsProps> = ({ showHeader = true }) => {
   };
 
   return (
-    <div className="mr-2">
+    <div className=" ">
       {showHeader && (
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">Transactions</h2>
@@ -45,23 +45,23 @@ const Transactions: React.FC<TransactionsProps> = ({ showHeader = true }) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
             </svg>
           </a>
-        </div>
+        </div>  
       )}
-      <div className="space-y-4">
+      <div className="space-y-5">
         {transactions.map((transaction) => (
           <div key={transaction.id} className="flex items-center justify-between border-b pb-2 mb-2">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-24">
               <div className={`w-6 h-6 rounded-full flex items-center justify-center ${transaction.amount > 0 ? 'bg-bg-gcolor text-white' : 'bg-[#E74F5B] text-white'}`}>
                 {transaction.amount > 0 ? <FaPlus size={12} /> : <FaMinus size={12} />}
               </div>
-              <div className="flex items-center space-x-28">
+              <div className="flex items-center space-x-16 ">
                 <span className="w-32 text-[#8C8C8C]">{transaction.name}</span>
                 <span className="w-28 text-[#8C8C8C]">{transaction.type}</span>
                 <span className="w-40 text-[#8C8C8C]">{transaction.date}</span>
                 <span className={`w-24 text-right font-semibold ${transaction.amount > 0 ? 'text-bg-gcolor' : 'text-[#E74F5B]'}`}>
                   {transaction.amount > 0 ? '+' : '-'} {Math.abs(transaction.amount).toFixed(2)}
                 </span>
-                <span className={`w-32 h-8 flex items-center justify-center text-bold rounded-lg text-base ${getStatusColor(transaction.status)}`}>
+                <span className={`w-36 h-8 flex items-center justify-center text-bold rounded-lg text-base ${getStatusColor(transaction.status)}`}>
                   {transaction.status}
                 </span>
               </div>

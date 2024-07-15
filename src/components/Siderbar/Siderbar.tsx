@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => {
     } else if (location.pathname === "/profile") {
       setActiveLink("profile");
     } else {
-      setActiveLink(""); // Reset active link if none matches
+      setActiveLink(""); 
     }
   }, [location.pathname]);
 
@@ -31,32 +31,32 @@ const Sidebar: React.FC = () => {
         <nav className="py-12">
           <a 
             onClick={() => navigate("/page-Dashboard")} 
-            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "page-Dashboard" ?  "text-sidecol" : ""} `}
+            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "page-Dashboard" ?  "text-[#32c48c]" : ""} `}
           >
             <BiGridAlt className="inline-block mr-2 text-2xl" /> Overview
           </a>
           <a 
             onClick={() => navigate("/accounts")} 
-            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "accounts" ? "text-sidecol" : ""}`}
+            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "accounts" ? "text-[#32c48c]" : ""}`}
           >
             <BiCreditCard className="inline-block mr-2 text-2xl" /> Accounts
           </a>
           <a 
             onClick={() => navigate("/page-transcations")} 
-            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "page-transcations" ? "text-sidecol" : ""} `}
+            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "page-transcations" ? "text-[#32c48c]" : ""} `}
           >
             <BiTransfer className="inline-block mr-2 text-2xl" /> Transactions
           </a>
           <a 
             onClick={() => navigate("/profile")} 
-            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "profile" ? "text-sidecol" : ""}`}
+            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "profile" ? "text-[#32c48c]" : ""}`}
           >
             <BiUser className="inline-block mr-2 text-2xl" /> Profile
           </a>
         </nav>
       </div>
       <div className="py-6 mr-6">
-        <button className="flex items-center py-2.5 px-4 w-full font-bold rounded transition duration-200  hover:text-red-500">
+        <button className="flex items-center py-2.5 px-4 w-full rounded transition duration-200 hover:bg-red-500 hover:text-white">
           <BiLogOut className="inline-block mr-2" /> Logout
         </button>
       </div>
