@@ -43,12 +43,6 @@ const AccountsLists: React.FC = () => {
           <div key={index} className="bg-[#D4F3E7] text-center rounded-lg p-8 px-10">
             <h3 className="font-semibold text-left text-blueis mb-2">{account.name}</h3>
             <p className="text-2xl font-bold">{account.balance}</p>
-            <button
-              className="mt-4 bg-[#D4F3E7] text-blue-600 px-4 py-2 rounded-lg hover:bg-[#D4F3E7]/80"
-              onClick={() => openModal(account)}
-            >
-              Withdraw
-            </button>
           </div>
         ))}
       </div>
@@ -57,7 +51,7 @@ const AccountsLists: React.FC = () => {
         <AddAccount
           onSubmit={handleSubmit}
           onCancel={closeModal}
-          accountName={selectedAccount.name} // Pass account data to Form component
+          accountName={selectedAccount.name} 
           accountBalance={selectedAccount.balance}
         />
       )}

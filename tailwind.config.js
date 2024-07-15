@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       spacing: {
-        '4.5': '65px',
+        '19': '5.5rem',
       },
       fontFamily: {
         'bebas': ['Bebas Neue', 'sans-serif'],  
@@ -21,6 +21,7 @@ export default {
         'bgcol':'#8A8A8A',
         'bgcolor':'#f5fcf9',
         'sidecol':'#32c48c'
+        
         
       },
       borderRadius: {

@@ -79,7 +79,7 @@ const UserProfile: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-span-1">
+        <div className="col-span-1 mr-2">
           <div className="bg-[#D4F3E7] rounded-lg p-6 ml-6">
             <div className="flex justify-between items-center">
               <h3 className="text-blueis font-medium">Main Account</h3>
@@ -92,7 +92,7 @@ const UserProfile: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white py-10">
+          <div className=" py-10">
             <TransactionsList />
           </div>
         </div>

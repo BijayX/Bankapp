@@ -11,7 +11,7 @@ const TransactionsList: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg p-6 mb-6">
+    <div className=" rounded-lg p-6 mb-6">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Transactions</h2>
         <button onClick={()=>navigate("/page-transcations")} className="text-green-500 hover:text-green-600 text-2xl ">→</button>

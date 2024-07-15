@@ -11,7 +11,7 @@ const Account: React.FC = () => {
 
   return (
     <div className="p-2 bg-[#f5fcf9] ">
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-4 gap-9">
         <AccountCard title="Main Account" balance="₦ 44,500.00" showBalance={showBalance} toggleShowBalance={toggleShowBalance} />
         <AccountCard title="School Savings" balance="₦ 44,500.00" showBalance={showBalance} toggleShowBalance={toggleShowBalance} />
         <AccountCard title="Holiday Plan" balance="₦ 44,500.00" showBalance={showBalance} toggleShowBalance={toggleShowBalance} />
