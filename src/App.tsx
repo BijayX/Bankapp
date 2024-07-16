@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/page-dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/accounts" element={<Account />} />
-        <Route path="/page-transcations" element={<TranscationsPage />} />
+        <Route path="/page-transactions" element={<TranscationsPage />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

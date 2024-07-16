@@ -58,7 +58,7 @@ const TransactionsComponent: React.FC<TransactionsComponentProps> = ({ hideHeade
       {!hideHeader && (
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold">Transactions</h2>
-          <a onClick={()=>navigate("/page-transcations")} className="text-2xl font-extrabold text-green-500">→</a>
+          <a onClick={()=>navigate("/page-transactions")} className="text-2xl font-extrabold text-green-500">→</a>
         </div>
       )}
       <div className="space-y-1">
