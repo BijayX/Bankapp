@@ -4,23 +4,16 @@ import logo from "../../assets/logo.png";
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Sidebar: React.FC = () => {
-  const [activeLink, setActiveLink] = useState(""); 
-  const location = useLocation(); 
+  const location = useLocation();
   const navigate = useNavigate();
 
+  // Initialize activeLink based on location.pathname
+  const [activeLink, setActiveLink] = useState(location.pathname);
+
   useEffect(() => {
-    if (location.pathname === "/page-Dashboard") {
-      setActiveLink("page-Dashboard");
-    } else if (location.pathname === "/accounts") {
-      setActiveLink("accounts");
-    } else if (location.pathname === "/page-transcations") {
-      setActiveLink("page-transcations");
-    } else if (location.pathname === "/profile") {
-      setActiveLink("profile");
-    } else {
-      setActiveLink(""); 
-    }
-  }, [location.pathname,activeLink]);
+    // Update activeLink whenever location.pathname changes
+    setActiveLink(location.pathname);
+  }, [location.pathname]);
 
   return (
     <div className="bg-bgcolor w-64 flex flex-col justify-between py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
@@ -31,25 +24,25 @@ const Sidebar: React.FC = () => {
         <nav className="py-12">
           <a 
             onClick={() => navigate("/page-Dashboard")} 
-            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "page-Dashboard" ?  "text-[#33b887]" : ""} `}
+            className={`block py-2.5 px-4 text-txtcol font-bold  ${activeLink === "/page-Dashboard" ? "text-[#33b888]" : ""}`}
           >
             <BiGridAlt className="inline-block mr-2 text-2xl" /> Overview
           </a>
           <a 
             onClick={() => navigate("/accounts")} 
-            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "accounts" ? "text-[#33b887]" : ""}`}
+            className={`block py-2.5 px-4 text-txtcol font-bold  ${activeLink === "/accounts" ? "text-[#33b888]" : ""}`}
           >
             <BiCreditCard className="inline-block mr-2 text-2xl" /> Accounts
           </a>
           <a 
             onClick={() => navigate("/page-transcations")} 
-            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "page-transcations" ? "text-[#33b887]" : ""} `}
+            className={`block py-2.5 px-4 text-txtcol font-bold  ${activeLink === "/page-transcations" ? "text-[#33b888]" : ""}`}
           >
             <BiTransfer className="inline-block mr-2 text-2xl" /> Transactions
           </a>
           <a 
             onClick={() => navigate("/profile")} 
-            className={`block py-2.5 px-4 text-txtcol font-bold transition duration-200 ${activeLink === "profile" ? "text-[#33b887]" : ""}`}
+            className={`block py-2.5 px-4 text-txtcol font-bold  ${activeLink === "/profile" ? "text-[#33b888]" : ""}`}
           >
             <BiUser className="inline-block mr-2 text-2xl" /> Profile
           </a>

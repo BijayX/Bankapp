@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 interface WithdrawFormProps {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   onCancel: () => void;
-  accountName: string; // Add these props
-  accountBalance: string;
+  accountName?: string; 
+  accountBalance?: string;
 }
 
 const AddAccount: React.FC<WithdrawFormProps> = ({ onSubmit, onCancel }) => {
   const [description, setDescription] = useState('');
+
+  console.log({description})
 
   const handleDescriptionChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setDescription(event.target.value);

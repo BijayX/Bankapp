@@ -23,7 +23,6 @@ const AccountsLists: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission logic here
     closeModal();
   };
 
@@ -33,7 +32,7 @@ const AccountsLists: React.FC = () => {
         <h2 className="text-xl font-semibold">Accounts</h2>
         <button
           className="text-3xl rounded-lg bg-[#D4F3E7] px-3 py-1 hover:text-black"
-          onClick={() => openModal(accounts[0])} // Open modal with the first account as an example
+          onClick={() => openModal(accounts[0])}
         >
           +
         </button>

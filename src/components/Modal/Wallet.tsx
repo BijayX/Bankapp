@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface FundWalletFormProps {
     onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -6,6 +6,12 @@ interface FundWalletFormProps {
 }
 
 const Wallet: React.FC<FundWalletFormProps> = ({ onSubmit, onCancel }) => {
+    const [paymentMethod, setPaymentMethod] = useState<string>('Direct Pay');
+
+    const handlePaymentMethodChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPaymentMethod(e.target.value);
+    };
+
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className="bg-white rounded-2xl shadow-lg p-6 px-12 w-96 max-w-sm">
@@ -17,62 +23,82 @@ const Wallet: React.FC<FundWalletFormProps> = ({ onSubmit, onCancel }) => {
                         <label className="block text-gray-700 mb-2">Select Payment Method</label>
                         <div className="flex items-center space-x-4">
                             <label className="flex items-center border  border-[#8A8A8A] rounded-lg px-4 py-2 p-2">
-                                <input type="radio" name="paymentMethod" value="Direct Pay" className="mr-2  accent-rose-500" />
+                                <input
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="Direct Pay"
+                                    className="mr-2  accent-rose-500"
+                                    checked={paymentMethod === 'Direct Pay'}
+                                    onChange={handlePaymentMethodChange}
+                                />
                                 Direct Pay
                             </label>
                             <label className="flex items-center border border-[#8A8A8A] rounded-lg py-2 px-4 p-2">
-                                <input type="radio" name="paymentMethod" value="Credit Card" className="mr-2 accent-rose-500" />
+                                <input
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="Credit Card"
+                                    className="mr-2 accent-rose-500"
+                                    checked={paymentMethod === 'Credit Card'}
+                                    onChange={handlePaymentMethodChange}
+                                />
                                 Credit Card
                             </label>
                         </div>
                     </div>
-                    <div className="mb-4">
-                        <label htmlFor="amount" className="block text-gray-700">Amount</label>
-                        <input
-                            id="amount"
-                            type="text"
-                            className="w-full border rounded-lg p-2 mt-1 border-[#8A8A8A] focus:outline-none"
-                            placeholder="100,000"
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="cardNumber" className="block text-gray-700">Card Number</label>
-                        <input
-                            id="cardNumber"
-                            type="text"
-                            className="w-full border rounded-lg p-2 mt-1 border-[#8A8A8A] focus:outline-none"
-                            placeholder="0000 0000 0000 0000"
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="cardHolderName" className="block text-gray-700">Card holder name</label>
-                        <input
-                            id="cardHolderName"
-                            type="text"
-                            className="w-full border rounded-lg p-2 mt-1 border-[#8A8A8A] focus:outline-none"
-                            placeholder="Enter card holder name"
-                        />
-                    </div>
-                    <div className="flex justify-between mb-4">
-                        <div className="w-1/2 pr-2">
-                            <label htmlFor="expiryDate" className="block text-gray-700">Expiry date</label>
+                    {paymentMethod === 'Direct Pay' && (
+                        <div className="mb-4">
+                            <label htmlFor="amount" className="block text-gray-700">Amount</label>
                             <input
-                                id="expiryDate"
+                                id="amount"
                                 type="text"
                                 className="w-full border rounded-lg p-2 mt-1 border-[#8A8A8A] focus:outline-none"
-                                placeholder="MM/YY"
+                                placeholder="100,000"
                             />
                         </div>
-                        <div className="w-1/2 pl-2">
-                            <label htmlFor="cvc" className="block text-gray-700">CVC</label>
-                            <input
-                                id="cvc"
-                                type="text"
-                                className="w-full border rounded-lg p-2 mt-1 border-[#8A8A8A] focus:outline-none"
-                                placeholder="000"
-                            />
-                        </div>
-                    </div>
+                    )}
+                    {paymentMethod === 'Credit Card' && (
+                        <>
+                            <div className="mb-4">
+                                <label htmlFor="cardNumber" className="block text-gray-700">Card Number</label>
+                                <input
+                                    id="cardNumber"
+                                    type="text"
+                                    className="w-full border rounded-lg p-2 mt-1 border-[#8A8A8A] focus:outline-none"
+                                    placeholder="0000 0000 0000 0000"
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="cardHolderName" className="block text-gray-700">Card holder name</label>
+                                <input
+                                    id="cardHolderName"
+                                    type="text"
+                                    className="w-full border rounded-lg p-2 mt-1 border-[#8A8A8A] focus:outline-none"
+                                    placeholder="Enter card holder name"
+                                />
+                            </div>
+                            <div className="flex justify-between mb-4">
+                                <div className="w-1/2 pr-2">
+                                    <label htmlFor="expiryDate" className="block text-gray-700">Expiry date</label>
+                                    <input
+                                        id="expiryDate"
+                                        type="text"
+                                        className="w-full border rounded-lg p-2 mt-1 border-[#8A8A8A] focus:outline-none"
+                                        placeholder="MM/YY"
+                                    />
+                                </div>
+                                <div className="w-1/2 pl-2">
+                                    <label htmlFor="cvc" className="block text-gray-700">CVC</label>
+                                    <input
+                                        id="cvc"
+                                        type="text"
+                                        className="w-full border rounded-lg p-2 mt-1 border-[#8A8A8A] focus:outline-none"
+                                        placeholder="000"
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    )}
                     <div className="flex justify-between space-x-4">
                         <button
                             type="button"
